@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "kastencluster-476c"
+    labels:
+        app: "kastencluster-476c"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 8000
+      targetPort: 8000
+      protocol: TCP
+      name: http
+    selector:
+        app: "kastencluster-476c"
