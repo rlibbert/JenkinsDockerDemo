@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kastencluster-b522"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kastencluster-b522"
+  template:
+    metadata:
+      labels:
+        app: "kastencluster-b522"
+    spec:
+      containers:
+        - name: "kastencluster-b522"
+          image: "rlibbertacr.azurecr.io/kastencluster"
+          ports:
+          - containerPort: 8000
