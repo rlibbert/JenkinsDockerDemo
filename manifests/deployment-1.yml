@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kastencluster-476c"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kastencluster-476c"
+  template:
+    metadata:
+      labels:
+        app: "kastencluster-476c"
+    spec:
+      containers:
+        - name: "kastencluster-476c"
+          image: "rlibbertacr.azurecr.io/kastencluster"
+          ports:
+          - containerPort: 8000
